@@ -1,0 +1,42 @@
+import type { Metadata } from "next";
+import { Container } from "@/components/container";
+import { PageHero } from "@/components/page-hero";
+import { IndustryCard } from "@/components/industry-card";
+import { CtaBanner } from "@/components/cta-banner";
+import { industries } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Industries",
+  description: "See how our freight forwarding and logistics support helps manufacturing, retail, trading, construction, and other industries.",
+};
+
+export default function IndustriesPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Industries We Serve"
+        title="Flexible logistics support tailored to different sectors"
+        description="Different industries face different freight demands. We provide practical logistics solutions that match the pace, complexity, and cargo needs of each business type."
+      />
+
+      <section className="py-10 md:py-14">
+        <Container>
+          <div className="grid-auto-fit">
+            {industries.map((industry) => (
+              <IndustryCard key={industry.title} industry={industry} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <CtaBanner
+        title="Logistics support designed around your industry"
+        description="Tell us about your operations and cargo needs, and we will help shape a freight solution that fits your business."
+        primaryLabel="Request a Consultation"
+        primaryHref="/quote"
+        secondaryLabel="Contact Us"
+        secondaryHref="/contact"
+      />
+    </>
+  );
+}

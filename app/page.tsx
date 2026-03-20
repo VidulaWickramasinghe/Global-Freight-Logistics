@@ -1,0 +1,109 @@
+import Link from "next/link";
+import { Container } from "@/components/container";
+import { HeroSection } from "@/components/hero-section";
+import { SectionHeading } from "@/components/section-heading";
+import { ServiceCard } from "@/components/service-card";
+import { IndustryCard } from "@/components/industry-card";
+import { CtaBanner } from "@/components/cta-banner";
+import { industries, processSteps, services } from "@/lib/content";
+
+export default function HomePage() {
+  return (
+    <>
+      <HeroSection />
+
+      <section className="py-10 md:py-14">
+        <Container>
+          <div className="space-y-8">
+            <SectionHeading
+              eyebrow="Core Services"
+              title="Freight and logistics solutions built around your cargo"
+              description="From urgent shipments to large-volume international freight, we provide coordinated logistics support that helps businesses move with clarity and confidence."
+            />
+            <div className="grid-auto-fit">
+              {services.slice(0, 6).map((service) => (
+                <ServiceCard key={service.title} service={service} />
+              ))}
+            </div>
+            <div>
+              <Link href="/services" className="inline-flex rounded-full border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-900 transition hover:border-slate-900">
+                View All Services
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-10 md:py-14">
+        <Container>
+          <div className="grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm lg:grid-cols-[1.05fr_0.95fr] md:p-10">
+            <div className="space-y-6">
+              <SectionHeading
+                eyebrow="Why Businesses Choose Us"
+                title="We understand that logistics is about more than moving cargo"
+                description="It is about protecting timelines, business commitments, customer trust, and operational continuity."
+              />
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  "End-to-end freight solutions",
+                  "Multi-modal expertise",
+                  "Fast communication",
+                  "Flexible service options",
+                  "Local Sri Lankan expertise",
+                  "Global freight reach",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-700">
+                    ✓ {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[1.75rem] bg-slate-50 p-6">
+              <h3 className="text-2xl font-bold text-slate-900">How We Work</h3>
+              <div className="mt-5 space-y-4">
+                {processSteps.map((step, index) => (
+                  <div key={step.title} className="flex gap-4 rounded-2xl bg-white p-4 shadow-sm">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-sky-100 font-bold text-sky-700">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-slate-900">{step.title}</div>
+                      <p className="mt-1 text-sm leading-6 text-slate-600">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-10 md:py-14">
+        <Container>
+          <div className="space-y-8">
+            <SectionHeading
+              eyebrow="Industries"
+              title="Supporting multiple industries with practical freight coordination"
+              description="We serve businesses across a wide range of sectors, helping them move cargo efficiently and professionally."
+            />
+            <div className="grid-auto-fit">
+              {industries.map((industry) => (
+                <IndustryCard key={industry.title} industry={industry} />
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <CtaBanner
+        title="Let’s move your cargo the right way"
+        description="Looking for a trusted freight forwarding and logistics company in Sri Lanka? Talk to our team today for tailored shipping, transport, and supply chain solutions."
+        primaryLabel="Get a Free Quote"
+        primaryHref="/quote"
+        secondaryLabel="Speak to Our Team"
+        secondaryHref="/contact"
+      />
+    </>
+  );
+}
