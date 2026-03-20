@@ -28,7 +28,7 @@ export function CtaBanner({
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 href={primaryHref}
-                className="inline-flex items-center justify-center rounded-full bg-sky-500 px-6 py-3 font-semibold text-white transition hover:bg-sky-600"
+                className="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
               >
                 {primaryLabel}
               </Link>

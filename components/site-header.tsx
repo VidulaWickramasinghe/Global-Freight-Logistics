@@ -11,7 +11,7 @@ function NavLink({ href, label, pathname }: { href: string; label: string; pathn
     <Link
       href={href}
       className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-        active ? "bg-slate-950 text-white" : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+        active ? "bg-orange-500 text-white" : "text-slate-600 hover:bg-orange-50 hover:text-orange-600"
       }`}
     >
       {label}
@@ -24,14 +24,14 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
       <div className="container-shell flex items-center justify-between gap-4 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-lg font-bold text-white shadow-lg">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500 text-lg font-bold text-white shadow-lg">
             GF
           </div>
           <div>
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">Global Freight</div>
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">Global Freight</div>
             <div className="text-sm font-bold text-slate-900 md:text-base">{company.shortName}</div>
           </div>
         </Link>
@@ -45,7 +45,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href="/quote"
-            className="hidden rounded-full bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-700 lg:inline-flex"
+            className="hidden rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800 lg:inline-flex"
           >
             Get Quote
           </Link>
@@ -68,7 +68,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={`rounded-2xl px-4 py-3 text-sm font-medium ${
-                  pathname === item.href ? "bg-slate-950 text-white" : "bg-slate-50 text-slate-700"
+                  pathname === item.href ? "bg-orange-500 text-white" : "bg-slate-50 text-slate-700"
                 }`}
                 onClick={() => setOpen(false)}
               >
