@@ -20,6 +20,19 @@ export default function ContactPage() {
 
       <section className="py-10 md:py-14">
         <Container>
+          <div className="mb-6 grid gap-4 sm:grid-cols-3">
+            {[
+              ["Average Response", "Within 2 business hours"],
+              ["Availability", "Monday to Saturday"],
+              ["Coverage", "Sri Lanka + International lanes"],
+            ].map(([title, value]) => (
+              <div key={title} className="rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">{title}</p>
+                <p className="mt-2 text-sm font-semibold text-slate-900">{value}</p>
+              </div>
+            ))}
+          </div>
+
           <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
               <h2 className="text-2xl font-bold text-slate-900">Get in Touch</h2>

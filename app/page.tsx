@@ -7,26 +7,64 @@ import { IndustryCard } from "@/components/industry-card";
 import { CtaBanner } from "@/components/cta-banner";
 import { industries, processSteps, services } from "@/lib/content";
 
+const proofs = [
+  ["Shipment Visibility", "Milestone updates and direct communication from planning through delivery."],
+  ["Risk-Aware Planning", "Mode and route recommendations based on urgency, cargo profile, and trade constraints."],
+  ["Execution Discipline", "Structured coordination to reduce delays, rework, and avoidable shipment disruptions."],
+];
+
 export default function HomePage() {
   return (
     <>
       <HeroSection />
 
-      <section className="py-10 md:py-14">
+      <section className="bg-white py-12 md:py-16">
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.95fr]">
+            <div className="space-y-6">
+              <SectionHeading
+                eyebrow="Your Trusted Partner"
+                title="We support businesses that need dependable cargo movement across local and international markets"
+                description="From time-sensitive air shipments to large-scale sea freight, we simplify logistics through practical planning and responsive coordination."
+              />
+              <p className="max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
+                Our team helps importers, exporters, and growing businesses move shipments with clarity, professionalism,
+                and confidence.
+              </p>
+              <div className="border-l-4 border-orange-500 pl-4 text-slate-700 italic">
+                “Logistics is about protecting timelines and supporting business growth.”
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-[2rem] shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1000"
+                alt="Logistics operations"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-12 md:py-16">
         <Container>
           <div className="space-y-8">
             <SectionHeading
               eyebrow="Core Services"
               title="Freight and logistics solutions built around your cargo"
-              description="From urgent shipments to large-volume international freight, we provide coordinated logistics support that helps businesses move with clarity and confidence."
+              description="Fast, flexible, and coordinated support for urgent deliveries, container freight, domestic transport, documentation, and storage planning."
             />
             <div className="grid-auto-fit">
-              {services.slice(0, 6).map((service) => (
+              {services.map((service) => (
                 <ServiceCard key={service.title} service={service} />
               ))}
             </div>
             <div>
-              <Link href="/services" className="inline-flex rounded-full border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-900 transition hover:border-slate-900">
+              <Link
+                href="/services"
+                className="inline-flex rounded-full border border-orange-500 bg-white px-5 py-3 font-semibold text-orange-500 transition hover:bg-orange-500 hover:text-white"
+              >
                 View All Services
               </Link>
             </div>
@@ -34,14 +72,14 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-10 md:py-14">
+      <section className="py-12 md:py-16">
         <Container>
-          <div className="grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm lg:grid-cols-[1.05fr_0.95fr] md:p-10">
+          <div className="grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-10 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="space-y-6">
               <SectionHeading
-                eyebrow="Why Businesses Choose Us"
-                title="We understand that logistics is about more than moving cargo"
-                description="It is about protecting timelines, business commitments, customer trust, and operational continuity."
+                eyebrow="How We Work"
+                title="A clear process that keeps your shipment moving"
+                description="We combine planning, documentation support, and practical coordination to reduce delays and keep every movement organized."
               />
               <div className="grid gap-3 sm:grid-cols-2">
                 {[
@@ -60,12 +98,11 @@ export default function HomePage() {
             </div>
 
             <div className="rounded-[1.75rem] bg-slate-50 p-6">
-              <h3 className="text-2xl font-bold text-slate-900">How We Work</h3>
-              <div className="mt-5 space-y-4">
-                {processSteps.map((step, index) => (
-                  <div key={step.title} className="flex gap-4 rounded-2xl bg-white p-4 shadow-sm">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-sky-100 font-bold text-sky-700">
-                      {index + 1}
+              <div className="space-y-4">
+                {processSteps.map((step) => (
+                  <div key={step.step} className="flex gap-4 rounded-2xl bg-white p-4 shadow-sm">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-orange-100 font-bold text-orange-600">
+                      {step.step}
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900">{step.title}</div>
@@ -76,10 +113,19 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {proofs.map(([title, description]) => (
+              <article key={title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h3 className="text-lg font-bold text-slate-900">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
+              </article>
+            ))}
+          </div>
         </Container>
       </section>
 
-      <section className="py-10 md:py-14">
+      <section className="py-12 md:py-16">
         <Container>
           <div className="space-y-8">
             <SectionHeading

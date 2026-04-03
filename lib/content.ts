@@ -1,5 +1,6 @@
 export type Service = {
   title: string;
+  short: string;
   description: string;
   bestFor: string[];
 };
@@ -12,11 +13,11 @@ export type Industry = {
 export const company = {
   name: "Global Freight Weight Transportation (Pvt) Ltd.",
   shortName: "Global Freight Weight Transportation",
-  tagline: "Moving Cargo with Confidence",
-  email: "info@yourcompany.lk",
+  tagline: "Move Cargo with Confidence",
+  email: "info@globalfreight.lk",
   phone: "+94 XX XXX XXXX",
-  location: "Sri Lanka",
-  website: "www.yourcompany.lk",
+  location: "Colombo, Sri Lanka",
+  website: "www.globalfreight.lk",
 };
 
 export const navigation = [
@@ -31,53 +32,53 @@ export const navigation = [
 ] as const;
 
 export const heroStats = [
-  { value: "Multi-Modal", label: "Air, ocean, and ground freight support" },
-  { value: "End-to-End", label: "Planning, coordination, handling, and delivery support" },
-  { value: "Sri Lanka + Global", label: "Local expertise connected to international trade routes" },
+  { value: "Air • Ocean • Ground", label: "Flexible multimodal freight planning for urgent, bulk, and domestic cargo." },
+  { value: "Import & Export", label: "End-to-end shipment coordination for businesses trading across borders." },
+  { value: "Sri Lanka to the World", label: "Local expertise backed by practical international freight support." },
 ];
 
 export const services: Service[] = [
   {
-    title: "Air Freight Services",
+    title: "Air Freight",
+    short: "Fast and dependable air cargo solutions for urgent shipments.",
     description:
-      "Fast and dependable air cargo solutions for urgent, high-value, and time-sensitive shipments that require efficient movement and careful coordination.",
-    bestFor: ["Urgent deliveries", "Small to medium consignments", "High-value goods", "Time-critical commercial cargo"],
+      "Our air freight services are ideal for urgent, high-value, and time-sensitive shipments. We support import and export cargo through efficient coordination and careful handling.",
+    bestFor: ["Urgent deliveries", "High-value cargo", "Time-critical shipments"],
   },
   {
-    title: "Ocean Freight Services",
+    title: "Ocean Freight",
+    short: "Flexible sea freight services for containerized and bulk shipments.",
     description:
-      "Flexible sea freight solutions for import and export cargo, including containerized, commercial, and bulk shipments across international routes.",
-    bestFor: ["Container shipments", "Bulk cargo", "Commercial imports and exports", "Long-distance international trade"],
+      "Cost-effective solutions for large-volume international cargo, supporting both FCL and LCL operations across global routes.",
+    bestFor: ["Container shipments", "Bulk cargo", "International trade"],
   },
   {
-    title: "Ground Freight Transportation",
+    title: "Ground Freight",
+    short: "Reliable inland transportation and local distribution.",
     description:
-      "Reliable inland transportation for domestic pickup, delivery, local distribution, and integrated cargo movement after airport or port arrival.",
-    bestFor: ["Domestic transport", "Warehouse-to-site delivery", "Regional distribution", "Integrated post-arrival movement"],
+      "Inland transport, cargo pickup, and final delivery. We provide practical coordination for domestic cargo movement.",
+    bestFor: ["Domestic transport", "Last-mile delivery", "Distribution"],
   },
   {
-    title: "Import & Export Freight Forwarding",
+    title: "Import & Export",
+    short: "End-to-end shipment planning and freight forwarding.",
     description:
-      "Professional freight forwarding support for businesses moving cargo into and out of international markets with structured coordination.",
-    bestFor: ["Importers", "Exporters", "Trading companies", "Growing businesses entering global markets"],
+      "Assisting businesses with inbound and outbound coordination, route management, and logistics support.",
+    bestFor: ["Importers", "Exporters", "Trading businesses"],
   },
   {
-    title: "Customs Coordination Support",
+    title: "Customs Coordination",
+    short: "Professional support for documentation and compliance.",
     description:
-      "Support for customs-related logistics coordination, shipment document flow, and smoother cargo processing through required procedures.",
-    bestFor: ["Import clearance coordination", "Export processing support", "Documentation management", "Trade compliance assistance"],
+      "Reducing complexity in customs procedures and trade documentation for smoother shipment processing.",
+    bestFor: ["Clearance support", "Documentation", "Compliance"],
   },
   {
-    title: "Warehousing & Distribution",
+    title: "Warehousing",
+    short: "Secure storage and cargo consolidation solutions.",
     description:
-      "Secure cargo storage, staging, consolidation, and delivery planning support that improves inventory flow and shipment readiness.",
-    bestFor: ["Temporary storage", "Cargo consolidation", "Dispatch support", "Supply chain coordination"],
-  },
-  {
-    title: "Door-to-Door Logistics",
-    description:
-      "Convenient end-to-end shipment handling that coordinates multiple transport stages under one streamlined logistics service.",
-    bestFor: ["Businesses seeking convenience", "Full shipment coordination", "Reduced logistics complexity", "International trade support"],
+      "Temporary storage, shipment staging, and organized delivery planning to maintain supply chain continuity.",
+    bestFor: ["Inventory support", "Consolidation", "Staging"],
   },
 ];
 
@@ -106,10 +107,6 @@ export const industries: Industry[] = [
     title: "E-commerce",
     description: "Shipment and distribution support to strengthen fulfilment operations and stock movement.",
   },
-  {
-    title: "SME & Corporate Businesses",
-    description: "Flexible logistics support designed for both growing enterprises and established organizations.",
-  },
 ];
 
 export const values = [
@@ -123,24 +120,29 @@ export const values = [
 
 export const processSteps = [
   {
-    title: "Shipment Assessment",
-    description: "We review cargo type, urgency, origin, destination, and service requirements.",
+    step: "01",
+    title: "Assessment",
+    description: "Understanding your cargo type, urgency, and destination.",
   },
   {
-    title: "Route & Mode Planning",
-    description: "We identify the most suitable transport solution across air, ocean, or ground freight.",
+    step: "02",
+    title: "Planning",
+    description: "Identifying the most suitable mode: air, ocean, or ground.",
   },
   {
-    title: "Documentation & Coordination",
-    description: "We support preparation, communication, and planning to keep shipment flow organized.",
+    step: "03",
+    title: "Coordination",
+    description: "Handling documentation and operational planning.",
   },
   {
-    title: "Cargo Movement",
-    description: "Your shipment is moved safely through the selected channel with structured handling.",
+    step: "04",
+    title: "Movement",
+    description: "Professional transport with careful monitoring.",
   },
   {
-    title: "Delivery & Follow-Through",
-    description: "We remain engaged through final delivery with professionalism, care, and support.",
+    step: "05",
+    title: "Delivery",
+    description: "Ensuring safe arrival and final follow-through.",
   },
 ];
 
@@ -148,7 +150,7 @@ export const faqs = [
   {
     question: "What types of freight do you handle?",
     answer:
-      "We support air freight, ocean freight, ground freight, import and export coordination, customs support, warehousing, and door-to-door logistics services.",
+      "We support air freight, ocean freight, ground freight, import and export coordination, customs support, and warehousing services.",
   },
   {
     question: "Do you manage both local and international shipments?",

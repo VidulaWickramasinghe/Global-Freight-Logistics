@@ -26,6 +26,24 @@ export default function ServicesPage() {
               <ServiceCard key={service.title} service={service} />
             ))}
           </div>
+
+          <div className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+            <h2 className="text-2xl font-bold text-slate-900">Service planning snapshot</h2>
+            <div className="mt-5 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">Best for urgency</p>
+                <p className="mt-2 text-sm font-semibold text-slate-900">Air Freight + Express handling</p>
+              </div>
+              <div className="rounded-2xl bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">Best for cost efficiency</p>
+                <p className="mt-2 text-sm font-semibold text-slate-900">Ocean Freight + Consolidation</p>
+              </div>
+              <div className="rounded-2xl bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">Best for domestic flow</p>
+                <p className="mt-2 text-sm font-semibold text-slate-900">Ground Freight + Warehousing</p>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 
