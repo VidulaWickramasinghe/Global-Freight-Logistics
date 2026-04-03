@@ -26,6 +26,19 @@ export default function IndustriesPage() {
               <IndustryCard key={industry.title} industry={industry} />
             ))}
           </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Recurring Shipments", "Weekly and monthly cargo movement plans for stable supply chains."],
+              ["Project Cargo", "Milestone-driven support for one-off industrial and construction movements."],
+              ["Seasonal Peaks", "Flexible capacity and route planning for promotional and seasonal demand spikes."],
+            ].map(([title, description]) => (
+              <div key={title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h3 className="text-lg font-bold text-slate-900">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
 

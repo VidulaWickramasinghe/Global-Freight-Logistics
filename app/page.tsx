@@ -7,6 +7,12 @@ import { IndustryCard } from "@/components/industry-card";
 import { CtaBanner } from "@/components/cta-banner";
 import { industries, processSteps, services } from "@/lib/content";
 
+const proofs = [
+  ["Shipment Visibility", "Milestone updates and direct communication from planning through delivery."],
+  ["Risk-Aware Planning", "Mode and route recommendations based on urgency, cargo profile, and trade constraints."],
+  ["Execution Discipline", "Structured coordination to reduce delays, rework, and avoidable shipment disruptions."],
+];
+
 export default function HomePage() {
   return (
     <>
@@ -106,6 +112,15 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {proofs.map(([title, description]) => (
+              <article key={title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h3 className="text-lg font-bold text-slate-900">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
+              </article>
+            ))}
           </div>
         </Container>
       </section>
