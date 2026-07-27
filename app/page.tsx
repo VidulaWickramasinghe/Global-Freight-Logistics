@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/container";
 import { HeroSection } from "@/components/hero-section";
 import { SectionHeading } from "@/components/section-heading";
@@ -37,10 +38,13 @@ export default function HomePage() {
             </div>
 
             <div className="overflow-hidden rounded-[2rem] shadow-2xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1000"
                 alt="Logistics operations"
                 className="h-full w-full object-cover"
+                width={1000}
+                height={700}
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

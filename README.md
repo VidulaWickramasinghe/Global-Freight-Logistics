@@ -60,5 +60,5 @@ lib/
 ## Notes
 
 - Replace placeholder contact details in `lib/content.ts`.
-- Forms are currently static UI forms and do not submit to a backend yet.
-- You can easily connect the quote and contact forms to email, a CRM, or a custom API route later.
+- Quote and contact forms submit to `/api/inquiries` and deliver through Resend when the variables in `.env.example` are configured.
+- Copy `.env.example` to `.env.local`, add the real company details and Resend API key, then run `npm run check` before deployment.

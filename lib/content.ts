@@ -14,10 +14,11 @@ export const company = {
   name: "Global Freight Weight Transportation (Pvt) Ltd.",
   shortName: "Global Freight Weight Transportation",
   tagline: "Move Cargo with Confidence",
-  email: "info@globalfreight.lk",
-  phone: "+94 XX XXX XXXX",
+  email: process.env.NEXT_PUBLIC_COMPANY_EMAIL ?? "info@globalfreight.lk",
+  phone: process.env.NEXT_PUBLIC_COMPANY_PHONE ?? "+94 XX XXX XXXX",
+  whatsapp: process.env.NEXT_PUBLIC_COMPANY_WHATSAPP ?? "",
   location: "Colombo, Sri Lanka",
-  website: "www.globalfreight.lk",
+  website: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.globalfreight.lk",
 };
 
 export const navigation = [

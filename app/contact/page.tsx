@@ -44,11 +44,13 @@ export default function ContactPage() {
                   <strong className="text-slate-900">Location:</strong> {company.location}
                 </div>
                 <div className="rounded-2xl bg-slate-50 px-4 py-4">
-                  <strong className="text-slate-900">Phone:</strong> {company.phone}
+                  <strong className="text-slate-900">Phone:</strong>{" "}
+                  {company.phone.includes("XX") ? company.phone : <a className="text-orange-600 hover:underline" href={`tel:${company.phone}`}>{company.phone}</a>}
                 </div>
                 <div className="rounded-2xl bg-slate-50 px-4 py-4">
-                  <strong className="text-slate-900">Email:</strong> {company.email}
+                  <strong className="text-slate-900">Email:</strong>{" "}<a className="text-orange-600 hover:underline" href={`mailto:${company.email}`}>{company.email}</a>
                 </div>
+                {company.whatsapp ? <div className="rounded-2xl bg-slate-50 px-4 py-4"><strong className="text-slate-900">WhatsApp:</strong>{" "}<a className="text-orange-600 hover:underline" href={`https://wa.me/${company.whatsapp}`}>Chat with our team</a></div> : null}
                 <div className="rounded-2xl border border-dashed border-slate-200 px-4 py-4 leading-7">
                   Share your shipment requirements and we will respond with practical next steps and service options.
                 </div>
