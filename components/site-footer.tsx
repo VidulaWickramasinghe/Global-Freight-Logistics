@@ -17,8 +17,8 @@ export function SiteFooter() {
               local and international borders.
             </p>
             <div className="flex flex-wrap gap-3 text-sm text-slate-300">
-              <span className="rounded-full bg-slate-900 px-4 py-2">{company.phone}</span>
-              <span className="rounded-full bg-slate-900 px-4 py-2">{company.email}</span>
+              {company.phone.includes("XX") ? <span className="rounded-full bg-slate-900 px-4 py-2">{company.phone}</span> : <a href={`tel:${company.phone}`} className="rounded-full bg-slate-900 px-4 py-2">{company.phone}</a>}
+              <a href={`mailto:${company.email}`} className="rounded-full bg-slate-900 px-4 py-2">{company.email}</a>
               <span className="rounded-full bg-slate-900 px-4 py-2">{company.location}</span>
             </div>
           </div>
